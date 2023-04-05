@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#columns {
+  break-inside: avoid;
+}
+
+.list-preview {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.event-preview {
+  padding: 10px 16px;
+  margin: 10px 10px;
+  border-bottom: 1px solid #000000;
+  border-radius: 15px;
+  background-color: #d9d9d9;
+}
+
+.event-preview:hover {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.event-list-title {
+  display: inline-block;
+  padding: 5px 5px;
+  margin: 5px 10px;
+}
+
+.navbar {
+  position: fixed-top;
+}
+
+.event-button {
+  padding: 4px 4px;
+  margin: 5px 5px;
+  line-height: 2em;
+}
+
+.create {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.create label {
+  text-align: left;
+  display: block;
+}
+
+.create h1 {
+  font-size: 20px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.create input,
+.create textarea,
+.create select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+
+.create button {
+  background: #fdcb6e  ;
+  color: black;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.event-details {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.event-details label {
+  text-align: left;
+  display: block;
+}
+
+
+.event-details input,
+.event-details textarea,
+.event-details select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+
+.event-details button {
+  background: #fdcb6e  ;
+  color: black;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.sign-up {
+  outline: none;
+}
+
+/* all of the following defines the style guideline for the trip edit page */
+.edit-trip {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.edit-trip label {
+  text-align: left;
+  display: block;
+}
+
+.edit-trip h1 {
+  font-size: 20px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.edit-trip input,
+.edit-trip textarea,
+.edit-trip select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+
+.edit-trip button {
+  background: #fdcb6e  ;
+  color: black;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}

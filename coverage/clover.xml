@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1680720431535" clover="3.2.0">
+  <project timestamp="1680720431535" name="All files">
+    <metrics statements="127" coveredstatements="44" conditionals="18" coveredconditionals="4" methods="49" coveredmethods="6" elements="194" coveredelements="54" complexity="0" loc="127" ncloc="127" packages="1" files="4" classes="4"/>
+    <file name="EditTrip.jsx" path="/Users/mertsekmen/Desktop/wilskills-event-webapp/wilskill-app/src/components/EditTrip.jsx">
+      <metrics statements="42" coveredstatements="17" conditionals="2" coveredconditionals="0" methods="15" coveredmethods="2"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="10" count="6" type="stmt"/>
+      <line num="11" count="5" type="stmt"/>
+      <line num="12" count="5" type="stmt"/>
+      <line num="13" count="5" type="stmt"/>
+      <line num="14" count="5" type="stmt"/>
+      <line num="15" count="5" type="stmt"/>
+      <line num="16" count="5" type="stmt"/>
+      <line num="17" count="5" type="stmt"/>
+      <line num="18" count="5" type="stmt"/>
+      <line num="19" count="5" type="stmt"/>
+      <line num="22" count="5" type="stmt"/>
+      <line num="23" count="0" type="stmt"/>
+      <line num="35" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="36" count="0" type="stmt"/>
+      <line num="40" count="0" type="stmt"/>
+      <line num="42" count="0" type="stmt"/>
+      <line num="43" count="0" type="stmt"/>
+      <line num="44" count="0" type="stmt"/>
+      <line num="45" count="0" type="stmt"/>
+      <line num="46" count="0" type="stmt"/>
+      <line num="47" count="0" type="stmt"/>
+      <line num="48" count="0" type="stmt"/>
+      <line num="49" count="0" type="stmt"/>
+      <line num="50" count="0" type="stmt"/>
+      <line num="51" count="0" type="stmt"/>
+      <line num="55" count="5" type="stmt"/>
+      <line num="56" count="5" type="stmt"/>
+      <line num="58" count="5" type="stmt"/>
+      <line num="59" count="0" type="stmt"/>
+      <line num="61" count="0" type="stmt"/>
+      <line num="64" count="5" type="stmt"/>
+      <line num="67" count="5" type="stmt"/>
+      <line num="78" count="0" type="stmt"/>
+      <line num="85" count="0" type="stmt"/>
+      <line num="92" count="0" type="stmt"/>
+      <line num="99" count="0" type="stmt"/>
+      <line num="105" count="0" type="stmt"/>
+      <line num="108" count="0" type="stmt"/>
+      <line num="118" count="0" type="stmt"/>
+      <line num="124" count="0" type="stmt"/>
+      <line num="130" count="0" type="stmt"/>
+    </file>
+    <file name="EventDetails.jsx" path="/Users/mertsekmen/Desktop/wilskills-event-webapp/wilskill-app/src/components/EventDetails.jsx">
+      <metrics statements="68" coveredstatements="25" conditionals="14" coveredconditionals="4" methods="28" coveredmethods="3"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="12" count="5" type="stmt"/>
+      <line num="13" count="5" type="stmt"/>
+      <line num="14" count="5" type="stmt"/>
+      <line num="15" count="5" type="stmt"/>
+      <line num="16" count="5" type="stmt"/>
+      <line num="17" count="5" type="stmt"/>
+      <line num="21" count="5" type="stmt"/>
+      <line num="22" count="0" type="stmt"/>
+      <line num="24" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="25" count="0" type="stmt"/>
+      <line num="29" count="0" type="stmt"/>
+      <line num="31" count="0" type="stmt"/>
+      <line num="34" count="5" type="stmt"/>
+      <line num="35" count="5" type="stmt"/>
+      <line num="36" count="5" type="stmt"/>
+      <line num="37" count="5" type="stmt"/>
+      <line num="38" count="5" type="stmt"/>
+      <line num="39" count="5" type="stmt"/>
+      <line num="40" count="5" type="stmt"/>
+      <line num="41" count="5" type="stmt"/>
+      <line num="42" count="5" type="stmt"/>
+      <line num="43" count="5" type="stmt"/>
+      <line num="44" count="5" type="stmt"/>
+      <line num="46" count="5" type="stmt"/>
+      <line num="47" count="0" type="stmt"/>
+      <line num="48" count="0" type="stmt"/>
+      <line num="50" count="0" type="stmt"/>
+      <line num="52" count="0" type="stmt"/>
+      <line num="65" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="66" count="0" type="stmt"/>
+      <line num="70" count="0" type="stmt"/>
+      <line num="72" count="0" type="stmt"/>
+      <line num="73" count="0" type="stmt"/>
+      <line num="74" count="0" type="stmt"/>
+      <line num="75" count="0" type="stmt"/>
+      <line num="76" count="0" type="stmt"/>
+      <line num="77" count="0" type="stmt"/>
+      <line num="78" count="0" type="stmt"/>
+      <line num="79" count="0" type="stmt"/>
+      <line num="80" count="0" type="stmt"/>
+      <line num="81" count="0" type="stmt"/>
+      <line num="83" count="0" type="stmt"/>
+      <line num="92" count="0" type="stmt"/>
+      <line num="95" count="0" type="stmt"/>
+      <line num="100" count="5" type="stmt"/>
+      <line num="101" count="5" type="stmt"/>
+      <line num="102" count="5" type="cond" truecount="1" falsecount="1"/>
+      <line num="103" count="0" type="stmt"/>
+      <line num="106" count="0" type="stmt"/>
+      <line num="156" count="0" type="stmt"/>
+      <line num="164" count="0" type="stmt"/>
+      <line num="171" count="0" type="stmt"/>
+      <line num="178" count="0" type="stmt"/>
+      <line num="185" count="0" type="stmt"/>
+      <line num="192" count="0" type="stmt"/>
+      <line num="199" count="0" type="stmt"/>
+      <line num="206" count="0" type="stmt"/>
+      <line num="221" count="5" type="stmt"/>
+      <line num="224" count="5" type="stmt"/>
+      <line num="253" count="0" type="stmt"/>
+      <line num="261" count="0" type="stmt"/>
+      <line num="268" count="0" type="stmt"/>
+      <line num="275" count="0" type="stmt"/>
+      <line num="282" count="0" type="stmt"/>
+      <line num="289" count="0" type="stmt"/>
+      <line num="296" count="0" type="stmt"/>
+      <line num="303" count="0" type="stmt"/>
+    </file>
+    <file name="EventList.jsx" path="/Users/mertsekmen/Desktop/wilskills-event-webapp/wilskill-app/src/components/EventList.jsx">
+      <metrics statements="11" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="1"/>
+      <line num="5" count="2" type="stmt"/>
+      <line num="6" count="8" type="stmt"/>
+      <line num="7" count="0" type="stmt"/>
+      <line num="8" count="0" type="stmt"/>
+      <line num="12" count="0" type="stmt"/>
+      <line num="13" count="0" type="stmt"/>
+      <line num="14" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="15" count="0" type="stmt"/>
+      <line num="27" count="0" type="stmt"/>
+      <line num="43" count="0" type="stmt"/>
+      <line num="50" count="0" type="stmt"/>
+    </file>
+    <file name="TripSignup.jsx" path="/Users/mertsekmen/Desktop/wilskills-event-webapp/wilskill-app/src/components/TripSignup.jsx">
+      <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <line num="9" count="0" type="stmt"/>
+      <line num="10" count="0" type="stmt"/>
+      <line num="11" count="0" type="stmt"/>
+      <line num="14" count="0" type="stmt"/>
+      <line num="16" count="0" type="stmt"/>
+      <line num="24" count="0" type="stmt"/>
+    </file>
+  </project>
+</coverage>
