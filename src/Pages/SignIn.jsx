@@ -29,24 +29,24 @@ const Signin = () => {
       //FIXME: In the use effect, SQL user data clears, why?
       //FIXME: Don't do post call when user is already in table
       if (user) {
-        const curUser = sqlUserData.filter((u) => u.firebase_ID == user.uid);
-        if (curUser.length === 0) {
-          console.log(curUser);
-          axios
-            .post("https://wilskill-app.herokuapp.com/users/adduser", {
-              namePronouns: stringWrapper(user.displayName),
-              email: stringWrapper(user.email),
-              firebaseID: stringWrapper(user.uid),
-            })
-            .then(async (res) => {
-              if (res) {
-                console.log(res);
-              }
-            })
-            .catch((error) => {
-              console.log(error);
-            });
-        }
+        //const curUser = sqlUserData.filter((u) => u.firebase_ID == user.uid);
+        // if (curUser.length === 0) {
+        //   console.log(curUser);
+        //   axios
+        //     .post("https://wilskill-app.herokuapp.com/users/adduser", {
+        //       namePronouns: stringWrapper(user.displayName),
+        //       email: stringWrapper(user.email),
+        //       firebaseID: stringWrapper(user.uid),
+        //     })
+        //     .then(async (res) => {
+        //       if (res) {
+        //         console.log(res);
+        //       }
+        //     })
+        //     .catch((error) => {
+        //       console.log(error);
+        //     });
+        // }
         navigate("/account");
       }
     });
