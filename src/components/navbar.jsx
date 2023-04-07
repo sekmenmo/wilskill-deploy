@@ -25,26 +25,21 @@ const NavBar = () => {
       <div className="flex items-center">
         {user?.displayName ? (
           <Link to="/signin">
-            <button
-              onClick={handleSignOut}
-              className="bg-[#FDCB6E] hover:bg-[#9e7f44] text-black font-bold py-2 px-3 mx-3 rounded-full"
-            >
+            <h1 onClick={handleSignOut} className="text-white text-xl">
               Sign-out
-            </button>
+            </h1>
           </Link>
         ) : (
           <Link to="/signin">
-            <button className="bg-[#FDCB6E] hover:bg-[#9e7f44] text-black font-bold py-2 px-3 mx-3 rounded-full">
-              Sign-in
-            </button>
+            <h1 className="text-white text-2xl">Sign-in</h1>
           </Link>
         )}
 
         <Link to="/">
-          <img src={Home} alt="Home" style={{ height: 52 }} />
+          <h1 className="text-white text-2xl">Trips</h1>
         </Link>
         <Link to="/account">
-          <img src={Account} alt="Account" />
+          <h1 className="text-white text-2xl">Account</h1>
         </Link>
       </div>
     </div>
