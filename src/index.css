@@ -33,6 +33,11 @@
   position: fixed-top;
 }
 
+.navbar h1 {
+  font-size: 20px;
+  color: white;
+}
+
 .event-button {
   padding: 4px 4px;
   margin: 5px 5px;
@@ -68,7 +73,7 @@
 }
 
 .create button {
-  background: #fdcb6e  ;
+  background: #fdcb6e;
   color: black;
   border: 0;
   padding: 8px;
@@ -87,7 +92,6 @@
   display: block;
 }
 
-
 .event-details input,
 .event-details textarea,
 .event-details select {
@@ -100,7 +104,7 @@
 }
 
 .event-details button {
-  background: #fdcb6e  ;
+  background: #fdcb6e;
   color: black;
   border: 0;
   padding: 8px;
@@ -142,7 +146,7 @@
 }
 
 .edit-trip button {
-  background: #fdcb6e  ;
+  background: #fdcb6e;
   color: black;
   border: 0;
   padding: 8px;
