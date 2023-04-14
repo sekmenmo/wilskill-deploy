@@ -13,7 +13,7 @@ import TripSignup from "./components/TripSignup";
 
 function App() {
   return (
-    <Router>
+    <Router forceRefresh={true}>
       <div>
         <AuthContextProvider>
           <NavBar />

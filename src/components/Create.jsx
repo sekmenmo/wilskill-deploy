@@ -1,23 +1,36 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Axios from "axios";
 
 export const Create = () => {
   const [title, setTitle] = useState("");
   const [leaveDate, setLeaveDate] = useState(new Date());
   const [returnDate, setReturnDate] = useState(new Date());
+  const [openDate, setOpenDate] = useState(new Date());
   const [location, setLocation] = useState("");
   const [desc, setDesc] = useState("");
   const [type, setType] = useState("Paddling");
   const [lead, setLead] = useState("");
   const [instructor_email, setInstructorEmail] = useState("");
   const [instructor_phone_number, setInstructorPhoneNumber] = useState("");
+  const [isDayTrip, setIsDayTrip] = useState(false);
   const [isPending, setIsPending] = useState(false);
+
+  const handleDayTripCheckbox = () => {
+    setIsDayTrip(!isDayTrip);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     setIsPending(true);
+
+    if(returnDate < leaveDate) {
+      alert("Current dates selected conflict");
+      setIsPending(false);
+      return;
+    }
 
     Axios.post("https://wilskill-app.herokuapp.com/trips/addtrip", {
       tripName: title,
@@ -25,6 +38,7 @@ export const Create = () => {
       location: location,
       leaveDate: leaveDate,
       returnDate: returnDate,
+      openDate: openDate,
       description: desc,
       lead_instructor: lead,
       instructor_email: instructor_email,
@@ -42,6 +56,7 @@ export const Create = () => {
     setTitle("");
     setLeaveDate(new Date());
     setReturnDate(new Date());
+    setOpenDate(new Date());
     setLocation("");
     setDesc("");
     setType("Paddling");
@@ -61,20 +76,30 @@ export const Create = () => {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-        <label>Trip leave date:</label>
-        <input
+        <input class="labeled-checkbox-2" type="checkbox" onChange={handleDayTripCheckbox}/>
+        <label class="checkbox-label-2">Is this a day trip?</label>
+        <br></br>
+        {!isDayTrip && <label>Trip leave date:</label>}
+        {isDayTrip && <label>Trip date:</label>}
+        {!isDayTrip && <input
           type="date"
           required
           value={leaveDate}
           onChange={(e) => setLeaveDate(e.target.value)}
-        />
-        <label>Trip return date:</label>
-        <input
+        />}
+        {isDayTrip && <input
+          type="date"
+          required
+          value={leaveDate}
+          onChange={(e) => {setLeaveDate(e.target.value); setReturnDate(e.target.value)}}
+        />}
+        {!isDayTrip && <label>Trip return date:</label>}
+        {!isDayTrip && <input
           type="date"
           required
           value={returnDate}
           onChange={(e) => setReturnDate(e.target.value)}
-        />
+        />}
         <label>Trip location:</label>
         <input
           type="text"
@@ -94,6 +119,7 @@ export const Create = () => {
           <option value="Climbing">Climbing</option>
           <option value="Backpacking">Backpacking</option>
           <option value="Caving">Caving</option>
+          <option value="Day Hike">Day Hike</option>
         </select>
         <label>Lead Instructor:</label>
         <textarea
@@ -113,8 +139,20 @@ export const Create = () => {
           value={instructor_phone_number}
           onChange={(e) => setInstructorPhoneNumber(e.target.value)}
         ></textarea>
+        <label>Signup Release Date (always at 8PM CST!):</label>
+        <input
+          type="date"
+          required
+          value={openDate}
+          onChange={(e) => setOpenDate(e.target.value)}
+        />
         {!isPending && <button>Add trip</button>}
         {isPending && <button disabled>Adding trip...</button>}
+        <Link to="/">
+            <button class='backButton' variant="primary" type="button">
+              Back
+            </button>
+        </Link>
       </form>
     </div>
   );

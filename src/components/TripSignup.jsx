@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { useFetch } from "../Pages/useFetch";
 import Axios from "axios";
 import { Link } from "react-router-dom";
+import SignupCard from "./SignupCard";
 
 const TripSignup = () => {
   const { id } = useParams();
@@ -20,22 +21,23 @@ const TripSignup = () => {
       <h1 className="pt-2"></h1>
       <ul>
         <h1 className="text-3xl pt-2 font-bold">
-          {event.tripName} Trip Signup Information
+          {event.tripName} Trip Signups
         </h1>
+        <br></br>
         {signups.map((signup) => (
-          <li key={signup.vunet_ID}>
-            <h1 className="text-xl pt-2 font-bold">
-              Student Name/Pronouns: {signup.name_pronouns}
-            </h1>
-            <p>Phone Number: {signup.phone_number}</p>
-            <p>Signup Time: {signup.signup_time}</p>
-            <p>Earliest Depart Time: {signup.earliest_depart_time}</p>
-            <p>Allergies: {signup.allergies_dietary}</p>
-            <p>Missings Items: {signup.missing_items}</p>
-            <p>Comments & Questions: {signup.comments_questions}</p>
-          </li>
+            <li key={signup.email + signup.signup_time}>
+            <SignupCard user={signup}></SignupCard>
+            </li>
         ))}
       </ul>
+      <button className="event-button bg-[#FDCB6E] hover:bg-[#9e7f44] text-black font-bold py-4 px-4 rounded-full">
+                Copy Selected Emails  
+      </button>
+      <Link to={`/events/${id}`}>
+        <button className="backButton" variant="primary" type="button">
+              Back
+        </button>
+      </Link>
     </div>
   );
 };

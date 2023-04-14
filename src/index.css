@@ -9,6 +9,7 @@
 .list-preview {
   display: grid;
   grid-template-columns: auto auto;
+  margin-bottom: 1%;
 }
 
 .event-preview {
@@ -152,4 +153,71 @@
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+input[type=checkbox] {
+  margin-top: 2%;;
+  transform: scale(1.2);
+}
+
+label.checkbox-label {
+  width: 80%;
+  float: left
+}
+
+input.labeled-checkbox {
+  margin-left: 12%;
+  width: 8%;
+  float: left
+}
+
+.signup-card {
+  width: 80%;
+  float: left;
+  padding: 10px 16px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #000000;
+  border-radius: 15px;
+  background-color: #d9d9d9;
+}
+
+.signup-card-selected {
+  width: 80%;
+  float: left;
+  padding: 10px 16px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #000000;
+  border-radius: 15px;
+  background-color: #ffca45;
+}
+
+.signup-card:hover {
+  box-shadow: 5px 5px 5px rgba(32, 26, 26, 0.1);
+}
+
+.signup-card-selected:hover {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+label.checkbox-label-2 {
+  width: 94%;
+  float: left;
+  margin-bottom: 6px;
+}
+
+input.labeled-checkbox-2 {
+  width: 4%;
+  margin-right: 2%;
+  float: left;
+  margin-bottom: 6px;
+}
+
+.backButton{
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 20px;
 }
