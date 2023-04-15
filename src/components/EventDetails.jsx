@@ -44,6 +44,7 @@ const EventDetails = () => {
   const [comments_questions, setComments] = useState("");
   const [disclaimer, setDisclaimer] = useState(false);
   const [isPending, setIsPending] = useState(false);
+  const day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
   let curEventInfo = {};
   event.map((event) => {
@@ -167,35 +168,35 @@ const EventDetails = () => {
               Sign Up for {event.tripName}
             </h1>
             <form onSubmit={handleSubmit} ref={form}>
-              <label>Your name and pronouns:</label>
+              <label><span className="red">*</span>Your name and pronouns:</label>
               <input
                 type="text"
                 required
                 value={name_pronouns}
                 onChange={(e) => setName(e.target.value)}
               />
-              <label>Your VU Net ID:</label>
+              <label><span className="red">*</span>Your VU Net ID:</label>
               <input
                 type="text"
                 required
                 value={vunetID}
                 onChange={(e) => setID(e.target.value)}
               />
-              <label>Your phone number (please double check):</label>
+              <label><span className="red">*</span>Your phone number (please double check):</label>
               <input
                 type="text"
                 required
                 value={phoneNumber}
                 onChange={(e) => setNumber(e.target.value)}
               />
-              <label>What's the earliest possible depart time for you?</label>
+              <label><span className="red">*</span>What's the earliest time you could leave on {day[(new Date (event.leaveDate)).getDay()]}?</label>
               <input
                 type="text"
                 required
                 value={earliest_depart_time}
                 onChange={(e) => setDepartTime(e.target.value)}
               />
-              <label>Do you have any dietary restrictions?</label>
+              <label><span className="red">*</span>Do you have any dietary restrictions?</label>
               <textarea
                 type="text"
                 required
@@ -205,7 +206,6 @@ const EventDetails = () => {
               <label>Do you need any gears/items from Wilskills?</label>
               <textarea
                 type="text"
-                required
                 value={missing_items}
                 onChange={(e) => setMissingItem(e.target.value)}
               ></textarea>
@@ -218,13 +218,12 @@ const EventDetails = () => {
               </label>
               <br></br>
               <input className="labeled-checkbox" type="checkbox" required/>
-              <label className="checkbox-label">I acknowledge the statement above</label>
+              <label className="checkbox-label"><span className="red">*</span>I acknowledge the statement above</label>
               <br></br>
               <br></br>
               <label>Do you have any comments or questions? </label>
               <textarea
                 type="text"
-                required
                 value={comments_questions}
                 onChange={(e) => setComments(e.target.value)}
               ></textarea>
@@ -241,6 +240,8 @@ const EventDetails = () => {
             </Link>
             </form>
           </div>}
+          
+          {((new Date(event.openDate)).setHours(20)) > (new Date()) && <label><i>trip will be available for signup on {new Date(event.openDate).toLocaleDateString()} at 8PM!</i></label>}
         </div>
       ))}
     </div>
