@@ -17,6 +17,8 @@ export const Create = () => {
   const [isDayTrip, setIsDayTrip] = useState(false);
   const [isPending, setIsPending] = useState(false);
 
+  const navigate = useNavigate();
+
   const handleDayTripCheckbox = () => {
     setIsDayTrip(!isDayTrip);
   };
@@ -45,8 +47,12 @@ export const Create = () => {
       instructor_phone_number: instructor_phone_number,
     })
       .then(async (res) => {
-        if (res) {
+        if (res.status == 201) {
           console.log(res);
+          alert('Trip created successfully. REFRESH the home page to see your changes.');
+        }
+        else {
+          alert('Trip creation ERROR.');
         }
       })
       .catch((error) => {
@@ -63,6 +69,7 @@ export const Create = () => {
     setLead("");
     setInstructorEmail("");
     setInstructorPhoneNumber("");
+    navigate('/');
   };
 
   return (
@@ -76,8 +83,8 @@ export const Create = () => {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-        <input class="labeled-checkbox-2" type="checkbox" onChange={handleDayTripCheckbox}/>
-        <label class="checkbox-label-2">Is this a day trip?</label>
+        <input className="labeled-checkbox-2" type="checkbox" onChange={handleDayTripCheckbox}/>
+        <label className="checkbox-label-2">Is this a day trip?</label>
         <br></br>
         {!isDayTrip && <label>Trip leave date:</label>}
         {isDayTrip && <label>Trip date:</label>}
@@ -149,7 +156,7 @@ export const Create = () => {
         {!isPending && <button>Add trip</button>}
         {isPending && <button disabled>Adding trip...</button>}
         <Link to="/">
-            <button class='backButton' variant="primary" type="button">
+            <button className='backButton' variant="primary" type="button">
               Back
             </button>
         </Link>

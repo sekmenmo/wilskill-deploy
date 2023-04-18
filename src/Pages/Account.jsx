@@ -17,7 +17,6 @@ const Account = () => {
     if (waiverUpload == null) return;
     const imageRef = ref(storage, `waivers/${user.displayName}`);
     uploadBytes(imageRef, waiverUpload).then(() => {
-      alert("Waiver uploaded");
       // call sql query to update date of latest waiver upload
       const firebase_ID = user.uid;
       console.log(firebase_ID);
@@ -25,8 +24,12 @@ const Account = () => {
         `https://wilskill-app.herokuapp.com/users/updateWaiverTime/${firebase_ID}`
       )
         .then(async (res) => {
-          if (res) {
+          if (res.status == 201) {
             console.log(res);
+            alert("Waiver uploaded");
+          }
+          else {
+            alert("Waiver upload ERROR.");
           }
         })
         .catch((error) => {

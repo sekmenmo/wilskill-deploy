@@ -8,7 +8,6 @@ export const useFetch = (url) => {
     Axios.get(url)
       .then((res) => {
         if (res) {
-          console.log(res);
           setData(res.data);
         }
       })

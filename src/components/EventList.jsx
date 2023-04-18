@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useFetch } from "../Pages/useFetch";
 import { UserAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const EventList = ({ events, title }) => {
   const { user } = UserAuth();

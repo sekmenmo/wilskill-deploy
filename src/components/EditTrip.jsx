@@ -60,8 +60,11 @@ const EditTrip = () => {
       instructor_phone_number: instructor_phone_number,
     })
       .then(async (res) => {
-        if (res) {
+        if (res.status==201) {
           console.log(res);
+          alert('Trip updated successfully.');
+        } else {
+          alert('Trip update ERROR.');
         }
       })
       .catch((error) => {
@@ -89,7 +92,7 @@ const EditTrip = () => {
   return (
     <div className="edit-trip">
       {event.map((event) => (
-        <div className="text-center">
+        <div className="text-center" key={event.ID}>
           <h1 className="font-bold">
             Update Trip Information for {event.tripName}
           </h1>

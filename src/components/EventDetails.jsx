@@ -1,5 +1,5 @@
 //This is the page that shows details of a specific event and allows users to sign up for that event
-import { useParams } from "react-router-dom";
+import { Navigate, useParams, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useFetch } from "../Pages/useFetch";
@@ -9,6 +9,7 @@ import emailjs from "@emailjs/browser";
 import { UserAuth } from "../context/AuthContext";
 
 const EventDetails = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const { data: event } = useFetch(
     `https://wilskill-app.herokuapp.com/trips/gettrip/${id}`
@@ -22,16 +23,22 @@ const EventDetails = () => {
   );
 
   const deleteButton = () => {
+    if (window.confirm("Are you sure you want to delete this trip?")){
     Axios.delete(`https://wilskill-app.herokuapp.com/trips/deletetrip/${id}`)
       .then(async (res) => {
-        if (res) {
+        if (res.status == 204) {
           console.log(res);
+          alert('Trip delete successful. REFRESH the home page to see your changes.');
+        } else {
+          alert('Trip delete ERROR.');
         }
       })
       .catch((error) => {
         console.log(error);
       });
     console.log("Delete completed");
+    navigate("/");
+    }
   };
 
   const [tripID, setTripID] = useState(id);
@@ -59,7 +66,7 @@ const EventDetails = () => {
       curEventInfo.instructor_phone_number = event.instructor_phone_number;
       curEventInfo.openDate = event.openDate;
   });
-  console.log(curEventInfo);
+  //console.log(curEventInfo);
 
   
 
@@ -81,8 +88,11 @@ const EventDetails = () => {
       commentsQs: comments_questions,
     })
       .then(async (res) => {
-        if (res) {
+        if (res.status==201) {
           console.log(res);
+          alert('Signup created successfully.');
+        } else {
+          alert('Signup creation ERROR.');
         }
       })
       .catch((error) => {
@@ -113,6 +123,7 @@ const EventDetails = () => {
           console.log(error.text);
         }
       );
+      navigate('/');
   };
 
   let showAdmin = false;
@@ -146,8 +157,7 @@ const EventDetails = () => {
               Update Trip Information
             </button>
           </Link>}
-          {showAdmin && <Link to="/">
-            {" "}
+          {showAdmin &&
             <button
               className="event-button bg-[#FDCB6E] hover:bg-[#9e7f44] text-black font-bold py-4 px-4 rounded-full"
               style={{ marginLeft: ".5rem" }}
@@ -155,7 +165,7 @@ const EventDetails = () => {
             >
               Delete Trip
             </button>
-          </Link>}
+          }
           {showAdmin && <Link to={`/view-trip/${event.ID}`}>
             <button className="event-button bg-[#FDCB6E] hover:bg-[#9e7f44] text-black font-bold py-4 px-4 rounded-full">
               View Trip Signups

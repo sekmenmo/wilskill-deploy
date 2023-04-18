@@ -172,24 +172,36 @@ input.labeled-checkbox {
 }
 
 .signup-card {
-  width: 80%;
+  width: 60%;
+  margin-left: 10%;
+  margin-bottom: 2%;
   float: left;
   padding: 10px 16px;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 20px;
   border-bottom: 1px solid #000000;
   border-radius: 15px;
   background-color: #d9d9d9;
 }
 
+.delete-signup-card{
+  float: right;
+  width: 10%;
+  margin-left: 2%;
+  margin-right: 18%;
+  margin-top: 70px;
+  background: #fdcb6e;
+  color: black;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+}
+
 .signup-card-selected {
-  width: 80%;
+  width: 60%;
   float: left;
   padding: 10px 16px;
   margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 20px;
+  margin-bottom: 2%;
+  padding: 10px 16px;
   border-bottom: 1px solid #000000;
   border-radius: 15px;
   background-color: #ffca45;
@@ -221,3 +233,20 @@ input.labeled-checkbox-2 {
   margin-right: 5px;
   margin-bottom: 20px;
 }
+
+.red {
+  color: red;
+}
+
+.bottom-sect{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #678966;
+}
+
+.signup-list{
+  padding-bottom: 4%;
+  overflow: auto;
+}
+
